@@ -1,0 +1,131 @@
+  /scenarios/{scenario_id}/risks/{risk_id}:
+    parameters:
+      - schema:
+          type: string
+        name: scenario_id
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: risk_id
+        in: path
+        required: true
+    post:
+      tags:
+      - Scenarios
+      summary: Add risk to the specific scenario
+      operationId: addRiskToScenarioWithId
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScenarioRisk'
+    get:
+      tags:
+      - Scenarios
+      summary: View risk in the specific scenario
+      operationId: viewRiskInScenarioWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  scenario_risk:
+                    $ref: "#/components/schemas/ScenarioRisk"
+                  risk:
+                    $ref: "#/components/schemas/Risk"
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Scenarios
+      summary: Update risk in the specific scenario
+      operationId: updateRiskInScenarioWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScenarioRisk"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScenarioRisk'
+    delete:
+      tags:
+      - Scenarios
+      summary: Remove risk from the specific scenario
+      operationId: removeRiskFromScenarioWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'

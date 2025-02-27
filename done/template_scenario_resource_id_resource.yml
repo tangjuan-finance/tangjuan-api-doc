@@ -1,0 +1,37 @@
+  /scenarios/{scenario_id}/risks:
+    parameters:
+      - schema:
+          type: string
+        name: scenario_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Scenarios
+      summary: Get a list of risks belonging to the specific scenario
+      operationId: listRisksForScenario
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Risk'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+

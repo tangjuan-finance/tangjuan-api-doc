@@ -1,0 +1,1113 @@
+paths:
+  /scenarios:
+    post:
+      tags:
+      - Scenarios
+      summary: Create Scenario
+      operationId: createScenario
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Scenario'
+    get:
+      tags:
+      - Scenarios
+      summary: Get A List of Scenarios
+      operationId: listAllScenarios
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Scenario'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /scenarios/{scenario_id}:
+    parameters:
+      - schema:
+          type: string
+        name: scenario_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Scenarios
+      summary: View Scenario
+      operationId: viewScenarioWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Scenario'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Scenarios
+      summary: Modify Scenario
+      operationId: modifyScenarioWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Scenario'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Scenario'
+    delete:
+      tags:
+      - Scenarios
+      summary: Delete Scenario
+      operationId: deleteScenarioWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /expenses:
+    post:
+      tags:
+      - Expenses
+      summary: Create Expense
+      operationId: createExpense
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+    get:
+      tags:
+      - Expenses
+      summary: Get A List of Expenses
+      operationId: listAllExpenses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Expense'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /expenses/{expense_id}:
+    parameters:
+      - schema:
+          type: string
+        name: expense_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Expenses
+      summary: View Expense
+      operationId: viewExpenseWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Expenses
+      summary: Modify Expense
+      operationId: modifyExpenseWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+    delete:
+      tags:
+      - Expenses
+      summary: Delete Expense
+      operationId: deleteExpenseWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /incomes:
+    post:
+      tags:
+      - Incomes
+      summary: Create Income
+      operationId: createIncome
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Income'
+    get:
+      tags:
+      - Incomes
+      summary: Get A List of Incomes
+      operationId: listAllIncomes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Income'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /incomes/{income_id}:
+    parameters:
+      - schema:
+          type: string
+        name: income_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Incomes
+      summary: View Income
+      operationId: viewIncomeWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Income'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Incomes
+      summary: Modify Income
+      operationId: modifyIncomeWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Income'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Income'
+    delete:
+      tags:
+      - Incomes
+      summary: Delete Income
+      operationId: deleteIncomeWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /assets:
+    post:
+      tags:
+      - Assets
+      summary: Create Asset
+      operationId: createAsset
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Asset'
+    get:
+      tags:
+      - Assets
+      summary: Get A List of Assets
+      operationId: listAllAssets
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Asset'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /assets/{asset_id}:
+    parameters:
+      - schema:
+          type: string
+        name: asset_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Assets
+      summary: View Asset
+      operationId: viewAssetWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asset'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Assets
+      summary: Modify Asset
+      operationId: modifyAssetWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asset'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Asset'
+    delete:
+      tags:
+      - Assets
+      summary: Delete Asset
+      operationId: deleteAssetWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /liabilities:
+    post:
+      tags:
+      - Liabilities
+      summary: Create Liability
+      operationId: createLiability
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Liability'
+    get:
+      tags:
+      - Liabilities
+      summary: Get A List of Liabilities
+      operationId: listAllLiabilities
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Liability'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /liabilities/{liability_id}:
+    parameters:
+      - schema:
+          type: string
+        name: liability_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Liabilities
+      summary: View Liability
+      operationId: viewLiabilityWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Liability'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Liabilities
+      summary: Modify Liability
+      operationId: modifyLiabilityWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Liability'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Liability'
+    delete:
+      tags:
+      - Liabilities
+      summary: Delete Liability
+      operationId: deleteLiabilityWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /houses:
+    post:
+      tags:
+      - Houses
+      summary: Create House
+      operationId: createHouse
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/House'
+    get:
+      tags:
+      - Houses
+      summary: Get A List of Houses
+      operationId: listAllHouses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/House'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /houses/{house_id}:
+    parameters:
+      - schema:
+          type: string
+        name: house_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Houses
+      summary: View House
+      operationId: viewHouseWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/House'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Houses
+      summary: Modify House
+      operationId: modifyHouseWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/House'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/House'
+    delete:
+      tags:
+      - Houses
+      summary: Delete House
+      operationId: deleteHouseWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /children:
+    post:
+      tags:
+      - Children
+      summary: Create Child
+      operationId: createChild
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Child'
+    get:
+      tags:
+      - Children
+      summary: Get A List of Children
+      operationId: listAllChildren
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Child'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /children/{child_id}:
+    parameters:
+      - schema:
+          type: string
+        name: child_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Children
+      summary: View Child
+      operationId: viewChildWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Child'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Children
+      summary: Modify Child
+      operationId: modifyChildWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Child'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Child'
+    delete:
+      tags:
+      - Children
+      summary: Delete Child
+      operationId: deleteChildWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /risks:
+    post:
+      tags:
+      - Risks
+      summary: Create Risk
+      operationId: createRisk
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Risk'
+    get:
+      tags:
+      - Risks
+      summary: Get A List of Risks
+      operationId: listAllRisks
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Risk'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+  /risks/{risk_id}:
+    parameters:
+      - schema:
+          type: string
+        name: risk_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Risks
+      summary: View Risk
+      operationId: viewRiskWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Risk'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - Risks
+      summary: Modify Risk
+      operationId: modifyRiskWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Risk'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Risk'
+    delete:
+      tags:
+      - Risks
+      summary: Delete Risk
+      operationId: deleteRiskWithId
+      responses:
+        '204':
+          description: No Content
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError'
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
