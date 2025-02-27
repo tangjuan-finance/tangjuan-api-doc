@@ -1,4 +1,4 @@
-  /plots/scenarios/{scenario_id}/expenses:
+  /plots/scenarios/{scenario_id}/wealth:
     parameters:
       - schema:
           type: string
@@ -8,20 +8,15 @@
     get:
       tags:
       - Plots
-      summary: Get a list of the expense plots in the specific scenario
-      operationId: listExpensePlotsInScenarioWithId
+      summary: Get the plot of the wealth in the specific scenario
+      operationId: plotWealthInScenarioWithId
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  items:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Plot'
+                $ref: '#/components/schemas/Plot'
         '401': 
           description: Unauthorized
           content:

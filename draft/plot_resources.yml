@@ -936,3 +936,96 @@
             application/problem+json: 
               schema:
                 $ref: '#/components/schemas/Problem'
+  /plots/scenarios/{scenario_id}/cashflow:
+    parameters:
+      - schema:
+          type: string
+        name: scenario_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Plots
+      summary: Get the plot of the cashflow in the specific scenario
+      operationId: plotCashflowInScenarioWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plot'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /plots/scenarios/{scenario_id}/capital:
+    parameters:
+      - schema:
+          type: string
+        name: scenario_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Plots
+      summary: Get the plot of the capital in the specific scenario
+      operationId: plotCapitalInScenarioWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plot'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /plots/scenarios/{scenario_id}/wealth:
+    parameters:
+      - schema:
+          type: string
+        name: scenario_id
+        in: path
+        required: true
+    get:
+      tags:
+      - Plots
+      summary: Get the plot of the wealth in the specific scenario
+      operationId: plotWealthInScenarioWithId
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plot'
+        '401': 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OASError' 
+        '404': 
+          description: Not Found
+          content:
+            application/problem+json: 
+              schema:
+                $ref: '#/components/schemas/Problem'
