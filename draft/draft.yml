@@ -1,69 +1,61 @@
-#  - PK: asset_id int NOT NULL
-#  - name char(64) NOT NULL
-#  - FK: owner_id int NOT NULL
-#  - amount int NOT NULL
-#  - description text
-#  - max_yearly_return_rate numeric NOT NULL
-#  - min_yearly_return_rate numeric NOT NULL
-#  - start_age small int NOT NULL
+# ```
+#  - CPK: scenario big int NOT NULL
+#  - CPK: expense_id big int NOT NULL
+#  - max_yearly_growth_rate float
+#  - min_yearly_growth_rate float
+#  - start_age small int
 #  - end_age small int
-#  - created_at date NOT NULL```
+#  - memo text
+#  - end_age small int
+#  - created_at date-time NOT NULL
+# ```
 
-# This is the schema for Table Assets, revised and write as OpenAPI Spec Schema
-components:
-  schemas:
-    Risk:
+# This is the schema for Table ScenarioExpense, 
+# 1. Consider if naming and type setting is following best practices
+# (Investment_ratio mean, after calculated the cashflow for the current year, if still leave some money, then how much would become liabilitys, and other would just spend as extra)
+# 2. With the correction, revised and write as OpenAPI Spec Schema
+    Plot:
       type: object
       required:
         - id
         - name
-        - owner_id
-        - max_loss
-        - min_loss
-        - start_age
+        - parent_id
+        - birth_age
         - created_at
       properties:
         id:
           type: integer
-          format: int32
-          description: "Primary key of the risk"
+          format: int64
+          description: "Primary key of the child"
           example: 1
         name:
           type: string
-          maxLength: 64
-          description: "Name of the asset"
-          example: "General Daily Risk"
-        owner_id:
+          maxLength: 128
+          description: "Name of the child"
+          example: "Tang Juan"
+        parent_id:
           type: integer
-          format: int32
-          description: "Foreign key referencing the owner"
+          format: int64
+          description: "Foreign key referencing the parent. (record owner)"
           example: 101
-        max_loss:
-          type: number
-          format: float
-          description: "Maximum possible loss due to the risk"
-        min_loss:
-          type: number
-          format: float
-          description: "Minimum possible loss due to the risk"
         description:
           type: string
-          description: "Detailed description of the risk"
+          description: "Detailed description of the child"
           nullable: true
-          example: "General Daily Risk, like losing or breaking things, or getting colds"
-        start_age:
+          example: "Tang Juan is a lovely kid"
+        birth_age:
           type: integer
-          format: int16
-          description: "The starting age when this risk applies"
-          example: 25
-        end_age:
+          format: int32
+          description: "The age of the parent when the child was born"
+          example: 30
+        independent_age:
           type: integer
-          format: int16
+          format: int32
           nullable: true
-          description: "The ending age when this risk applies, null if indefinite"
-          example: 65
+          description: "The estimated age when the child becomes financially independent"
         created_at:
           type: string
-          format: date
-          description: "Date when the risk record was created"
-          example: "2025-02-26"
+          format: date-time
+          description: "The timestamp when the child record was created"
+          example: "2025-02-27T12:34:56Z"
+    
