@@ -1,0 +1,172 @@
+/accounts/registration:
+  post:
+    tags:
+    - Accounts
+    summary: Start registering An Account
+    operationId: registerAccount
+    responses:
+      '202':
+        description: Accepted the request for registering a new account
+        headers:
+          Location:
+            schema:
+              type: string
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/OASError' 
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+                example: tangjuan.com@gmail.com
+    security: []
+/accounts/registration/{token}:
+  parameters:
+    - schema:
+        type: string
+      name: token
+      in: path
+      required: true
+  get:
+    tags:
+    - Accounts
+    summary: Get An Account with unfinished registered
+    operationId: viewAccountWithAuthNToken
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Account'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Problem'
+    security: []
+  post:
+    tags:
+    - Accounts
+    summary: Finish registering An Account
+    operationId: registerAccountWithAuthNToken
+    responses:
+      '201':
+        description: Account Created
+        headers:
+          Location:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Account'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+              $ref: '../openapi.yml#/components/schemas/Account'
+    security: []
+/accounts/{account_id}:
+  parameters:
+    - schema:
+        type: string
+      name: account_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Accounts
+    summary: View Account
+    operationId: viewAccountWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Account'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Problem'
+  put:
+    tags:
+    - Accounts
+    summary: Modify Account
+    operationId: modifyAccountWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Account'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/OASError' 
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../openapi.yml#/components/schemas/Account'
+  delete:
+    tags:
+    - Accounts
+    summary: Delete Account
+    operationId: deleteAccountWithId
+    responses:
+      '204':
+        description: No Content
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../openapi.yml#/components/schemas/Problem'
