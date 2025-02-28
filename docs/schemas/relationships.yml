@@ -1,0 +1,328 @@
+ScenarioExpense:
+  type: object
+  required:
+    - scenario_id
+    - expense_id
+  properties:
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the scenario"
+      example: "nLpl6cZKxgnzR"
+    expense_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the expense"
+      example: "nLpl6cZKxgnzR"
+    max_yearly_growth_rate:
+      type: number
+      format: float
+      description: "Maximum growing rate for the expense per year in this scenario"
+      example: 1.5
+    min_yearly_growth_rate:
+      type: number
+      format: float
+      description: "Minimum growing rate for the expense per year in this scenario"
+      example: 0.9
+    start_age:
+      type: integer
+      format: int32
+      description: "The starting age when this expense applies in this scenario"
+      example: 25
+    end_age:
+      type: integer
+      format: int32
+      description: "The ending age when this expense applies in this scenario"
+      example: 65
+    memo:
+      type: string
+      description: "Memo for the expense in this scenario"
+      example: "The expense grow faster in this scenario"
+    created_at:
+      type: string
+      format: date-time
+      description: "The timestamp when the expense record was added to this scenario"
+      example: "2025-02-27T12:34:56Z"
+ScenarioIncome:
+  type: object
+  required:
+    - scenario_id
+    - income_id
+  properties:
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the scenario"
+      example: "nLpl6cZKxgnzR"
+    income_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the income"
+      example: "nLpl6cZKxgnzR"
+    max_yearly_growth_rate:
+      type: number
+      format: float
+      description: "Maximum growing rate for the income per year in this scenario"
+      example: 1.5
+    min_yearly_growth_rate:
+      type: number
+      format: float
+      description: "Minimum growing rate for the income per year in this scenario"
+      example: 0.9
+    start_age:
+      type: integer
+      format: int32
+      description: "The starting age when this income applies in this scenario"
+      example: 25
+    end_age:
+      type: integer
+      format: int32
+      description: "The ending age when this income applies in this scenario"
+      example: 65
+    memo:
+      type: string
+      description: "Memo for the income in this scenario"
+      example: "The income grow faster in this scenario"
+    created_at:
+      type: string
+      format: date-time
+      description: "The timestamp when the income record was added to this scenario"
+      example: "2025-02-27T12:34:56Z"
+ScenarioAsset:
+  type: object
+  required:
+    - scenario_id
+    - asset_id
+    - allocation_percentage
+  properties:
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the scenario"
+      example: "nLpl6cZKxgnzR"
+    asset_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the asset"
+      example: "nLpl6cZKxgnzR"
+    max_yearly_return_rate:
+      type: number
+      format: float
+      description: "Maximum return rate for the asset per year in this scenario"
+      example: 1.5
+    min_yearly_return_rate:
+      type: number
+      format: float
+      description: "Minimum return rate for the asset per year in this scenario"
+      example: 0.9
+    allocation_percentage:
+      type: number
+      format: float
+      description: "How much percentage the remaining cash flow per year would be allocated to this asset in this scenario"
+      example: 0.3
+    start_age:
+      type: integer
+      format: int32
+      description: "The starting age when this asset applies in this scenario"
+      example: 25
+    end_age:
+      type: integer
+      format: int32
+      description: "The ending age when this asset applies in this scenario"
+      example: 65
+    memo:
+      type: string
+      description: "Memo for the asset in this scenario"
+      example: "The asset grow faster in this scenario"
+    created_at:
+      type: string
+      format: date-time
+      description: "The timestamp when the asset record was added to this scenario"
+      example: "2025-02-27T12:34:56Z"
+ScenarioLiability:
+  type: object
+  required:
+    - scenario_id
+    - liability_id
+    - allocation_percentage
+  properties:
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the scenario"
+      example: "nLpl6cZKxgnzR"
+    liability_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the liability"
+      example: "nLpl6cZKxgnzR"
+    interest_rate:
+      type: number
+      format: float
+      description: "Annual interest rate in percentage in this scenario"
+      example: 0.05
+    allocation_percentage:
+      type: number
+      format: float
+      description: "How much percentage the deficit cash flow per year would be allocated to this liability in this scenario"
+      example: 0.3
+    start_age:
+      type: integer
+      format: int32
+      description: "The starting age when this liability applies in this scenario"
+      example: 25
+    end_age:
+      type: integer
+      format: int32
+      description: "The ending age when this liability applies in this scenario"
+      example: 65
+    memo:
+      type: string
+      description: "Memo for the liability in this scenario"
+      example: "The liability grow faster in this scenario"
+    created_at:
+      type: string
+      format: date-time
+      description: "The timestamp when the liability record was added to this scenario"
+      example: "2025-02-27T12:34:56Z"
+ScenarioHouse:
+  type: object
+  required:
+    - scenario_id
+    - house_id
+  properties:
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the scenario"
+      example: "nLpl6cZKxgnzR"
+    house_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the house"
+      example: "nLpl6cZKxgnzR"
+    down_payment:
+      type: number
+      format: int64
+      description: "Initial payment made towards the house purchase in this scenario"
+      example: 15000000
+    interest_rate:
+      type: number
+      format: float
+      description: "Annual interest rate in percentage for the mortgage in this scenario"
+      example: 0.035
+    loan_term:
+      type: integer
+      format: int32
+      description: "Loan term duration in years in this scenario"
+      example: 40
+    purchase_age:
+      type: integer
+      format: int32
+      description: "Age of the owner at the time of house purchase in this scenario"
+      example: 26
+    sale_age:
+      type: integer
+      format: int32
+      description: "Age of the owner at the time of house sale in this scenario"
+      example: 65
+    memo:
+      type: string
+      description: "Memo for the house in this scenario"
+      example: "The house loan take longer to pay in this scenario"
+    created_at:
+      type: string
+      format: date-time
+      description: "The timestamp when the house record was added to this scenario"
+      example: "2025-02-27T12:34:56Z"
+ScenarioChild:
+  type: object
+  required:
+    - scenario_id
+    - child_id
+  properties:
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the scenario"
+      example: "nLpl6cZKxgnzR"
+    child_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the child"
+      example: "nLpl6cZKxgnzR"
+    birth_age:
+      type: integer
+      format: int32
+      description: "The age of the parent when the child was born in this scenario"
+      example: 30
+    independent_age:
+      type: integer
+      format: int32
+      description: "The estimated age when the child becomes financially independent in this scenario"
+    memo:
+      type: string
+      description: "Memo for the child in this scenario"
+      example: "The child take longer to become independent in this scenario"
+    created_at:
+      type: string
+      format: date-time
+      description: "The timestamp when the child record was added to this scenario"
+      example: "2025-02-27T12:34:56Z"
+ScenarioRisk:
+  type: object
+  required:
+    - scenario_id
+    - risk_id
+  properties:
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the scenario"
+      example: "nLpl6cZKxgnzR"
+    risk_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "Primary key of the risk"
+      example: "nLpl6cZKxgnzR"
+    max_loss:
+      type: number
+      format: int64
+      description: "Maximum possible loss due to the risk in this scenario"
+    min_loss:
+      type: number
+      format: int64
+      description: "Minimum possible loss due to the risk in this scenario"
+    start_age:
+      type: integer
+      format: int32
+      description: "The starting age when this risk applies in this scenario"
+      example: 25
+    end_age:
+      type: integer
+      format: int32
+      description: "The ending age when this risk applies in this scenario"
+      example: 65
+    memo:
+      type: string
+      description: "Memo for the risk in this scenario"
+      example: "The risk is higher in this scenario"
+    created_at:
+      type: string
+      format: date-time
+      description: "The timestamp when the risk record was added to this scenario"
+      example: "2025-02-27T12:34:56Z"

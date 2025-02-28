@@ -1,0 +1,139 @@
+/houses:
+  post:
+    tags:
+    - Houses
+    summary: Create House
+    operationId: createHouse
+    responses:
+      '201':
+        description: Created
+        headers:
+          Location:
+            schema:
+              type: string
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/House'
+  get:
+    tags:
+    - Houses
+    summary: Get A List of Houses
+    operationId: listAllHouses
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/House'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+/houses/{house_id}:
+  parameters:
+    - schema:
+        type: string
+      name: house_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Houses
+    summary: View House
+    operationId: viewHouseWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/House'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+  put:
+    tags:
+    - Houses
+    summary: Modify House
+    operationId: modifyHouseWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/House'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/House'
+  delete:
+    tags:
+    - Houses
+    summary: Delete House
+    operationId: deleteHouseWithId
+    responses:
+      '204':
+        description: No Content
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'

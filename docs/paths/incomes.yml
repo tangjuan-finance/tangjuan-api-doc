@@ -1,0 +1,139 @@
+/incomes:
+  post:
+    tags:
+    - Incomes
+    summary: Create Income
+    operationId: createIncome
+    responses:
+      '201':
+        description: Created
+        headers:
+          Location:
+            schema:
+              type: string
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Income'
+  get:
+    tags:
+    - Incomes
+    summary: Get A List of Incomes
+    operationId: listAllIncomes
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Income'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+/incomes/{income_id}:
+  parameters:
+    - schema:
+        type: string
+      name: income_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Incomes
+    summary: View Income
+    operationId: viewIncomeWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Income'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+  put:
+    tags:
+    - Incomes
+    summary: Modify Income
+    operationId: modifyIncomeWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Income'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Income'
+  delete:
+    tags:
+    - Incomes
+    summary: Delete Income
+    operationId: deleteIncomeWithId
+    responses:
+      '204':
+        description: No Content
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'

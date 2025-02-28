@@ -1,0 +1,139 @@
+/children:
+  post:
+    tags:
+    - Children
+    summary: Create Child
+    operationId: createChild
+    responses:
+      '201':
+        description: Created
+        headers:
+          Location:
+            schema:
+              type: string
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Child'
+  get:
+    tags:
+    - Children
+    summary: Get A List of Children
+    operationId: listAllChildren
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Child'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+/children/{child_id}:
+  parameters:
+    - schema:
+        type: string
+      name: child_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Children
+    summary: View Child
+    operationId: viewChildWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Child'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+  put:
+    tags:
+    - Children
+    summary: Modify Child
+    operationId: modifyChildWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Child'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Child'
+  delete:
+    tags:
+    - Children
+    summary: Delete Child
+    operationId: deleteChildWithId
+    responses:
+      '204':
+        description: No Content
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'

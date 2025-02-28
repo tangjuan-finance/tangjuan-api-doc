@@ -1,0 +1,139 @@
+/expenses:
+  post:
+    tags:
+    - Expenses
+    summary: Create Expense
+    operationId: createExpense
+    responses:
+      '201':
+        description: Created
+        headers:
+          Location:
+            schema:
+              type: string
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Expense'
+  get:
+    tags:
+    - Expenses
+    summary: Get A List of Expenses
+    operationId: listAllExpenses
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Expense'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+/expenses/{expense_id}:
+  parameters:
+    - schema:
+        type: string
+      name: expense_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Expenses
+    summary: View Expense
+    operationId: viewExpenseWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+  put:
+    tags:
+    - Expenses
+    summary: Modify Expense
+    operationId: modifyExpenseWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Expense'
+  delete:
+    tags:
+    - Expenses
+    summary: Delete Expense
+    operationId: deleteExpenseWithId
+    responses:
+      '204':
+        description: No Content
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'

@@ -1,0 +1,128 @@
+PlotBase:
+  type: object
+  required:
+    - data
+    - created_at
+  properties:
+    data:
+      type: array
+      description: "Time-series data points for the plot"
+      items:
+        type: object
+        properties:
+          age:
+            type: integer
+            format: int32
+            description: "Age at which the value is calculated"
+          value:
+            type: integer
+            format: int64
+            description: "Value of the resource at the given age"
+    created_at:
+      type: string
+      format: date-time
+      description: "Timestamp when the plot was generated"
+      example: "2025-02-27T12:34:56Z"
+ResourcePlot:
+  allOf:
+    - $ref: "#/components/schemas/PlotBase"
+    - type: object
+      required:
+        - resource_type
+        - resource_id
+      properties:
+        resource_type:
+          $ref: "#/components/schemas/ResourceType"
+        resource_id:
+          type: string
+          minLength: 13
+          maxLength: 13
+          description: "ID of the related resource"
+          example: "nLpl6cZKxgnzR"
+ScenarioResourcePlot:
+  allOf:
+    - $ref: "#/components/schemas/ResourcePlot"
+    - type: object
+      required:
+        - scenario_id
+      properties:
+        scenario_id:
+          type: string
+          minLength: 13
+          maxLength: 13
+          description: "ID of the specified scenario"
+          example: "nLpl6cZKxgnzR"
+ScenarioResourcePlotList:
+  type: object
+  properties:
+    required:
+      - scenario_id
+      - resource_type
+      - data_list
+    scenario_id:
+      type: string
+      minLength: 13
+      maxLength: 13
+      description: "ID of the specified scenario"
+      example: "nLpl6cZKxgnzR"
+    resource_type:
+      $ref: "#/components/schemas/ResourceType"
+    data_list:
+      type: array
+      description: "A list of plot data of the resource in this scenario"
+      items:
+        $ref: "#/components/schemas/ResourcePlot"
+ScenarioResourcePlotTotal:
+  allOf:
+    - $ref: "#/components/schemas/PlotBase"
+    - type: object
+      required:
+        - scenario_id
+        - resource_type
+        - resource_amount
+      properties:
+        scenario_id:
+          type: string
+          minLength: 13
+          maxLength: 13
+          description: "ID of the specified scenario"
+          example: "nLpl6cZKxgnzR"
+        resource_type:
+          $ref: "#/components/schemas/ResourceType"
+        resource_amount:
+          type: integer
+          format: int32
+          description: "Number of records of the resource in this scenario"
+          example: 19
+ScenarioAggregatePlot:
+  allOf:
+    - $ref: "#/components/schemas/PlotBase"
+    - type: object
+      required:
+        - scenario_id
+        - aggregate_type
+      properties:
+        scenario_id:
+          type: string
+          minLength: 13
+          maxLength: 13
+          description: "ID of the specified scenario"
+          example: "nLpl6cZKxgnzR"
+        aggregate_type:
+          type: string
+          description: "Type of aggregate"
+          enum:
+            - cash_flow
+            - capital
+            - wealth
+ResourceType:
+  type: string
+  description: "Type of resource"
+  enum:
+    - expense
+    - income
+    - asset
+    - liability
+    - house
+    - child
+    - risk

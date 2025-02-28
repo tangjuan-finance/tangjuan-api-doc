@@ -1,0 +1,167 @@
+/scenarios/{scenario_id}/assets:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Scenarios
+    summary: Get a list of assets in the specific scenario
+    operationId: listAssetsInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Asset'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+/scenarios/{scenario_id}/assets/{asset_id}:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+    - schema:
+        type: string
+      name: asset_id
+      in: path
+      required: true
+  post:
+    tags:
+    - Scenarios
+    summary: Add asset to the specific scenario
+    operationId: addAssetToScenarioWithId
+    responses:
+      '201':
+        description: Created
+        headers:
+          Location:
+            schema:
+              type: string
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ScenarioAsset'
+  get:
+    tags:
+    - Scenarios
+    summary: View asset in the specific scenario
+    operationId: viewAssetInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scenario_asset:
+                  $ref: "#/components/schemas/ScenarioAsset"
+                asset:
+                  $ref: "#/components/schemas/Asset"
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+  put:
+    tags:
+    - Scenarios
+    summary: Update asset in the specific scenario
+    operationId: updateAssetInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ScenarioAsset"
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ScenarioAsset'
+  delete:
+    tags:
+    - Scenarios
+    summary: Remove asset from the specific scenario
+    operationId: removeAssetFromScenarioWithId
+    responses:
+      '204':
+        description: No Content
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '#/components/schemas/Problem'

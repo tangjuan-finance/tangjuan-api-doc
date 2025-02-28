@@ -1,0 +1,76 @@
+/sessions:
+  post:
+    tags:
+    - Sessions
+    summary: Start Session (Login)
+    operationId: startSession
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Session'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+                example: tangjuan.com@gmail.com
+              password:
+                type: string
+                format: password
+    security: []
+/sessions/access-tokens:
+  post:
+    tags:
+    - Sessions
+    summary: Update Session
+    operationId: updateSession
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Session'
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+    requestBody:
+      content:
+        application/json:
+          schema:
+              $ref: '#/components/schemas/Session'
+    security:
+      - refreshToken: []
+/sessions/refresh-tokens:
+  delete:
+    tags:
+    - Sessions
+    summary: Delete Session (Logout)
+    operationId: deleteSession
+    responses:
+      '204':
+        description: No Content
+      '400':
+        description: Bad request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OASError'
+    security:
+      - refreshToken: []
