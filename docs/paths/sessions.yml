@@ -10,13 +10,13 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Session'
+              $ref: '../openapi.yml#/components/schemas/Session'
       '400':
         description: Bad request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
     requestBody:
       content:
         application/json:
@@ -43,18 +43,18 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Session'
+              $ref: '../openapi.yml#/components/schemas/Session'
       '400':
         description: Bad request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
     requestBody:
       content:
         application/json:
           schema:
-              $ref: '#/components/schemas/Session'
+              $ref: '../openapi.yml#/components/schemas/Session'
     security:
       - refreshToken: []
 /sessions/refresh-tokens:
@@ -71,6 +71,6 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
     security:
       - refreshToken: []
