@@ -16,7 +16,7 @@
         content:
           application/json:
             schema:
-              $ref: '../../../openapi.yml#/components/schemas/Plot'
+              $ref: '../../../openapi.yml#/components/schemas/ScenarioAggregatePlot'
       '401': 
         description: Unauthorized
         content:
@@ -47,7 +47,7 @@
         content:
           application/json:
             schema:
-              $ref: '../../../openapi.yml#/components/schemas/Plot'
+              $ref: '../../../openapi.yml#/components/schemas/ScenarioAggregatePlot'
       '401': 
         description: Unauthorized
         content:
@@ -78,7 +78,7 @@
         content:
           application/json:
             schema:
-              $ref: '../../../openapi.yml#/components/schemas/Plot'
+              $ref: '../../../openapi.yml#/components/schemas/ScenarioAggregatePlot'
       '401': 
         description: Unauthorized
         content:

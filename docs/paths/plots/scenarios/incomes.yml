@@ -21,7 +21,7 @@
         content:
           application/json:
             schema:
-              $ref: '../../../openapi.yml#/components/schemas/Plot'
+              $ref: '../../../openapi.yml#/components/schemas/ScenarioResourcePlot'
       '401': 
         description: Unauthorized
         content:
@@ -57,7 +57,7 @@
                 items:
                   type: array
                   items:
-                    $ref: '../../../openapi.yml#/components/schemas/Plot'
+                    $ref: '../../../openapi.yml#/components/schemas/ScenarioResourcePlotList'
       '401': 
         description: Unauthorized
         content:
@@ -88,7 +88,7 @@
         content:
           application/json:
             schema:
-              $ref: '../../../openapi.yml#/components/schemas/Plot'
+              $ref: '../../../openapi.yml#/components/schemas/ScenarioResourcePlotTotal'
       '401': 
         description: Unauthorized
         content:

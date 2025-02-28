@@ -16,7 +16,7 @@
         content:
           application/json:
             schema:
-              $ref: '../openapi.yml#/components/schemas/Plot'
+              $ref: '../openapi.yml#/components/schemas/ResourcePlot'
       '401': 
         description: Unauthorized
         content:
@@ -47,7 +47,7 @@
         content:
           application/json:
             schema:
-              $ref: '../openapi.yml#/components/schemas/Plot'
+              $ref: '../openapi.yml#/components/schemas/ResourcePlot'
       '401': 
         description: Unauthorized
         content:
@@ -78,7 +78,7 @@
         content:
           application/json:
             schema:
-              $ref: '../openapi.yml#/components/schemas/Plot'
+              $ref: '../openapi.yml#/components/schemas/ResourcePlot'
       '401': 
         description: Unauthorized
         content:
@@ -109,7 +109,7 @@
         content:
           application/json:
             schema:
-              $ref: '../openapi.yml#/components/schemas/Plot'
+              $ref: '../openapi.yml#/components/schemas/ResourcePlot'
       '401': 
         description: Unauthorized
         content:
@@ -140,7 +140,7 @@
         content:
           application/json:
             schema:
-              $ref: '../openapi.yml#/components/schemas/Plot'
+              $ref: '../openapi.yml#/components/schemas/ResourcePlot'
       '401': 
         description: Unauthorized
         content:
@@ -171,7 +171,7 @@
         content:
           application/json:
             schema:
-              $ref: '../openapi.yml#/components/schemas/Plot'
+              $ref: '../openapi.yml#/components/schemas/ResourcePlot'
       '401': 
         description: Unauthorized
         content:
@@ -202,7 +202,7 @@
         content:
           application/json:
             schema:
-              $ref: '../openapi.yml#/components/schemas/Plot'
+              $ref: '../openapi.yml#/components/schemas/ResourcePlot'
       '401': 
         description: Unauthorized
         content:
