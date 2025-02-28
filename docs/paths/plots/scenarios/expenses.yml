@@ -1,0 +1,103 @@
+/plots/scenarios/{scenario_id}/expenses/{expense_id}:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+    - schema:
+        type: string
+      name: expense_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get the plot of expense in the specific scenario
+    operationId: plotExpenseWithIdInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'
+/plots/scenarios/{scenario_id}/expenses:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get a list of the expense plots in the specific scenario
+    operationId: listExpensePlotsInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'
+/plots/scenarios/{scenario_id}/expenses/total:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get the plot of the total expense in the specific scenario
+    operationId: plotTotalExpenseInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'

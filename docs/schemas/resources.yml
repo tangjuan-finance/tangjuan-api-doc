@@ -492,3 +492,14 @@ Scenario:
       format: date-time
       description: "The timestamp when the scenario record was created"
       example: "2025-02-27T12:34:56Z"
+ResourceType:
+  type: string
+  description: "Type of resource"
+  enum:
+    - expense
+    - income
+    - asset
+    - liability
+    - house
+    - child
+    - risk

@@ -1,0 +1,103 @@
+/plots/scenarios/{scenario_id}/houses/{house_id}:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+    - schema:
+        type: string
+      name: house_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get the plot of house in the specific scenario
+    operationId: plotHouseWithIdInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'
+/plots/scenarios/{scenario_id}/houses:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get a list of the house plots in the specific scenario
+    operationId: listHousePlotsInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'
+/plots/scenarios/{scenario_id}/houses/total:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get the plot of the total house in the specific scenario
+    operationId: plotTotalHouseInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'

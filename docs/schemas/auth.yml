@@ -1,0 +1,13 @@
+Session:
+  type: object
+  properties:
+    access_token:
+      type: string
+      description: "JWT access token with short expiration"
+    refresh_token:
+      type: string
+      description: "Refresh token to obtain a new access token when expired"
+    expires_in:
+      type: integer
+      description: "Access token expiration time in seconds"
+      example: 3600

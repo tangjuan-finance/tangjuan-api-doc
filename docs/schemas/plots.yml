@@ -25,14 +25,14 @@ PlotBase:
       example: "2025-02-27T12:34:56Z"
 ResourcePlot:
   allOf:
-    - $ref: "#/components/schemas/PlotBase"
+    - $ref: "../openapi.yml#/components/schemas/PlotBase"
     - type: object
       required:
         - resource_type
         - resource_id
       properties:
         resource_type:
-          $ref: "#/components/schemas/ResourceType"
+          $ref: "../openapi.yml#/components/schemas/ResourceType"
         resource_id:
           type: string
           minLength: 13
@@ -41,7 +41,7 @@ ResourcePlot:
           example: "nLpl6cZKxgnzR"
 ScenarioResourcePlot:
   allOf:
-    - $ref: "#/components/schemas/ResourcePlot"
+    - $ref: "../openapi.yml#/components/schemas/ResourcePlot"
     - type: object
       required:
         - scenario_id
@@ -66,15 +66,15 @@ ScenarioResourcePlotList:
       description: "ID of the specified scenario"
       example: "nLpl6cZKxgnzR"
     resource_type:
-      $ref: "#/components/schemas/ResourceType"
+      $ref: "../openapi.yml#/components/schemas/ResourceType"
     data_list:
       type: array
       description: "A list of plot data of the resource in this scenario"
       items:
-        $ref: "#/components/schemas/ResourcePlot"
+        $ref: "../openapi.yml#/components/schemas/ResourcePlot"
 ScenarioResourcePlotTotal:
   allOf:
-    - $ref: "#/components/schemas/PlotBase"
+    - $ref: "../openapi.yml#/components/schemas/PlotBase"
     - type: object
       required:
         - scenario_id
@@ -88,7 +88,7 @@ ScenarioResourcePlotTotal:
           description: "ID of the specified scenario"
           example: "nLpl6cZKxgnzR"
         resource_type:
-          $ref: "#/components/schemas/ResourceType"
+          $ref: "../openapi.yml#/components/schemas/ResourceType"
         resource_amount:
           type: integer
           format: int32
@@ -96,7 +96,7 @@ ScenarioResourcePlotTotal:
           example: 19
 ScenarioAggregatePlot:
   allOf:
-    - $ref: "#/components/schemas/PlotBase"
+    - $ref: "../openapi.yml#/components/schemas/PlotBase"
     - type: object
       required:
         - scenario_id
@@ -115,14 +115,3 @@ ScenarioAggregatePlot:
             - cash_flow
             - capital
             - wealth
-ResourceType:
-  type: string
-  description: "Type of resource"
-  enum:
-    - expense
-    - income
-    - asset
-    - liability
-    - house
-    - child
-    - risk

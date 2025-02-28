@@ -21,19 +21,19 @@
                 items:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Income'
+                    $ref: '../../openapi.yml#/components/schemas/Income'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../../openapi.yml#/components/schemas/OASError' 
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../../openapi.yml#/components/schemas/Problem'
 /scenarios/{scenario_id}/incomes/{income_id}:
   parameters:
     - schema:
@@ -63,24 +63,24 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../../openapi.yml#/components/schemas/OASError'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../../openapi.yml#/components/schemas/OASError'
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../../openapi.yml#/components/schemas/Problem'
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ScenarioIncome'
+            $ref: '../../openapi.yml#/components/schemas/ScenarioIncome'
   get:
     tags:
     - Scenarios
@@ -95,21 +95,21 @@
               type: object
               properties:
                 scenario_income:
-                  $ref: "#/components/schemas/ScenarioIncome"
+                  $ref: "../../openapi.yml#/components/schemas/ScenarioIncome"
                 income:
-                  $ref: "#/components/schemas/Income"
+                  $ref: "../../openapi.yml#/components/schemas/Income"
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../../openapi.yml#/components/schemas/OASError' 
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
     - Scenarios
@@ -121,30 +121,30 @@
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ScenarioIncome"
+              $ref: "../../openapi.yml#/components/schemas/ScenarioIncome"
       '400':
         description: Bad request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../../openapi.yml#/components/schemas/OASError' 
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../../openapi.yml#/components/schemas/OASError' 
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../../openapi.yml#/components/schemas/Problem'
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ScenarioIncome'
+            $ref: '../../openapi.yml#/components/schemas/ScenarioIncome'
   delete:
     tags:
     - Scenarios
@@ -158,10 +158,10 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../../openapi.yml#/components/schemas/OASError' 
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../../openapi.yml#/components/schemas/Problem'

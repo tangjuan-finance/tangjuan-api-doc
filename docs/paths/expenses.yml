@@ -16,18 +16,18 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Expense'
+            $ref: '../openapi.yml#/components/schemas/Expense'
   get:
     tags:
     - Expenses
@@ -44,13 +44,13 @@
                 items:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Expense'
+                    $ref: '../openapi.yml#/components/schemas/Expense'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
 /expenses/{expense_id}:
   parameters:
     - schema:
@@ -69,19 +69,19 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Expense'
+              $ref: '../openapi.yml#/components/schemas/Expense'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'
   put:
     tags:
     - Expenses
@@ -93,30 +93,30 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Expense'
+              $ref: '../openapi.yml#/components/schemas/Expense'
       '400':
         description: Bad request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Expense'
+            $ref: '../openapi.yml#/components/schemas/Expense'
   delete:
     tags:
     - Expenses
@@ -130,10 +130,10 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'

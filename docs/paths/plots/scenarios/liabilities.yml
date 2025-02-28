@@ -1,0 +1,103 @@
+/plots/scenarios/{scenario_id}/liabilities/{liability_id}:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+    - schema:
+        type: string
+      name: liability_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get the plot of liability in the specific scenario
+    operationId: plotLiabilityWithIdInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'
+/plots/scenarios/{scenario_id}/liabilities:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get a list of the liability plots in the specific scenario
+    operationId: listLiabilityPlotsInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'
+/plots/scenarios/{scenario_id}/liabilities/total:
+  parameters:
+    - schema:
+        type: string
+      name: scenario_id
+      in: path
+      required: true
+  get:
+    tags:
+    - Plots
+    summary: Get the plot of the total liability in the specific scenario
+    operationId: plotTotalLiabilityInScenarioWithId
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Plot'
+      '401': 
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/OASError' 
+      '404': 
+        description: Not Found
+        content:
+          application/problem+json: 
+            schema:
+              $ref: '../../../openapi.yml#/components/schemas/Problem'

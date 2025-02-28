@@ -16,18 +16,18 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Liability'
+            $ref: '../openapi.yml#/components/schemas/Liability'
   get:
     tags:
     - Liabilities
@@ -44,13 +44,13 @@
                 items:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Liability'
+                    $ref: '../openapi.yml#/components/schemas/Liability'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
 /liabilities/{liability_id}:
   parameters:
     - schema:
@@ -69,19 +69,19 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Liability'
+              $ref: '../openapi.yml#/components/schemas/Liability'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'
   put:
     tags:
     - Liabilities
@@ -93,30 +93,30 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Liability'
+              $ref: '../openapi.yml#/components/schemas/Liability'
       '400':
         description: Bad request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Liability'
+            $ref: '../openapi.yml#/components/schemas/Liability'
   delete:
     tags:
     - Liabilities
@@ -130,10 +130,10 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'

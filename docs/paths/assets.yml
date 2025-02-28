@@ -16,18 +16,18 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Asset'
+            $ref: '../openapi.yml#/components/schemas/Asset'
   get:
     tags:
     - Assets
@@ -44,13 +44,13 @@
                 items:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Asset'
+                    $ref: '../openapi.yml#/components/schemas/Asset'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
 /assets/{asset_id}:
   parameters:
     - schema:
@@ -69,19 +69,19 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Asset'
+              $ref: '../openapi.yml#/components/schemas/Asset'
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'
   put:
     tags:
     - Assets
@@ -93,30 +93,30 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Asset'
+              $ref: '../openapi.yml#/components/schemas/Asset'
       '400':
         description: Bad request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError' 
+              $ref: '../openapi.yml#/components/schemas/OASError' 
       '401': 
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'
     requestBody:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Asset'
+            $ref: '../openapi.yml#/components/schemas/Asset'
   delete:
     tags:
     - Assets
@@ -130,10 +130,10 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OASError'
+              $ref: '../openapi.yml#/components/schemas/OASError'
       '404': 
         description: Not Found
         content:
           application/problem+json: 
             schema:
-              $ref: '#/components/schemas/Problem'
+              $ref: '../openapi.yml#/components/schemas/Problem'

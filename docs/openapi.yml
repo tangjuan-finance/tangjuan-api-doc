@@ -74,73 +74,63 @@ paths:
     $ref: "./paths/plots.yml"
 components:
   schemas:
-    # Source: https://github.com/designapis/openapi/blob/main/ch20/openapi.yml
     Account:
       $ref: "./schemas/resources.yml#/Account"
     Session:
-      type: object
-      properties:
-        access_token:
-          type: string
-          description: "JWT access token with short expiration"
-        refresh_token:
-          type: string
-          description: "Refresh token to obtain a new access token when expired"
-        expires_in:
-          type: integer
-          description: "Access token expiration time in seconds"
-          example: 3600
+      $ref: "./schemas/auth.yml#/Session"
+    Expense:
+      $ref: "./schemas/resources.yml#/Expense"
+    Income:
+      $ref: "./schemas/resources.yml#/Income"
+    Asset:
+      $ref: "./schemas/resources.yml#/Asset"
+    House:
+      $ref: "./schemas/resources.yml#/House"
+    Child:
+      $ref: "./schemas/resources.yml#/Child"
+    Liability:
+      $ref: "./schemas/resources.yml#/Liability"
+    Risk:
+      $ref: "./schemas/resources.yml#/Risk"
+    Scenario:
+      $ref: "./schemas/resources.yml#/Scenario"
+    ResourceType:
+      $ref: "./schemas/resources.yml#/ResourceType"
+    ScenarioExpense:
+      $ref: "./schemas/relationships.yml#/ScenarioExpense"
+    ScenarioIncome:
+      $ref: "./schemas/relationships.yml#/ScenarioIncome"
+    ScenarioAsset:
+      $ref: "./schemas/relationships.yml#/ScenarioAsset"
+    ScenarioLiability:
+      $ref: "./schemas/relationships.yml#/ScenarioLiability"
+    ScenarioHouse:
+      $ref: "./schemas/relationships.yml#/ScenarioHouse"
+    ScenarioChild:
+      $ref: "./schemas/relationships.yml#/ScenarioChild"
+    ScenarioRisk:
+      $ref: "./schemas/relationships.yml#/ScenarioRisk"
+    PlotBase:
+      $ref: "./schemas/plots.yml#/PlotBase"
+    ResourcePlot:
+      $ref: "./schemas/plots.yml#/ResourcePlot"
+    ScenarioResourcePlot:
+      $ref: "./schemas/plots.yml#/ScenarioResourcePlot"
+    ScenarioResourcePlotList:
+      $ref: "./schemas/plots.yml#/ScenarioResourcePlotList"
+    ScenarioResourcePlotTotal:
+      $ref: "./schemas/plots.yml#/ScenarioResourcePlotTotal"
+    ScenarioAggregatePlot:
+      $ref: "./schemas/plots.yml#/ScenarioAggregatePlot"
     OASError: 
-      type: object
-      properties:
-        message:
-          type: string
-          description: Human-readable error message
-        errors:
-          type: array
-          items:
-            type: object
-            properties:
-              path:
-                type: string
-                description: For input validation errors, identifies where in the JSON request body the error occured
-              message:
-                type: string
-                description: Human-readable error message
-              errorCode:
-                type: string
-                description: Code indicating error type
-    Problem: 
-      type: object
-      properties:
-        type:
-          type: string
-          description: URI indicating error type
-        title:
-          type: string
-          description: Human-readable error title
-        status:
-          type: integer
-          description: HTTP status code
-        detail:
-          type: string
-          description: Human-readable error details
-        instance:
-          type: string
-          description: URI indicating error instance
+      $ref: "./schemas/errors.yml#/OASError"
+    Problem:
+      $ref: "./schemas/errors.yml#/Problem"
   securitySchemes:
     apiKey:
-      description: API key for API User Authentication
-      type: apiKey
-      name: api-key
-      in: header
+      $ref: "security.yml#/apiKey"
     accessToken:
-      description: Bearer token for accessing private resource
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
+      $ref: "security.yml#/accessToken"
     refreshToken:
-      description: Bearer token for refreshing access token
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
+      $ref: "security.yml#/refreshToken"
+# Source: https://github.com/designapis/openapi/blob/main/ch20/openapi.yml

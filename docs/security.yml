@@ -1,0 +1,15 @@
+apiKey:
+  description: API key for API User Authentication
+  type: apiKey
+  name: api-key
+  in: header
+accessToken:
+  description: Bearer token for accessing private resource
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+refreshToken:
+  description: Bearer token for refreshing access token
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
