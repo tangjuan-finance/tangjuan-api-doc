@@ -46,32 +46,140 @@ tags:
 servers:
   - url: https://njfps-backend-api.onrender.com
 paths:
-  /accounts/registration: 
+  /accounts/registration:
     $ref: "./paths/accounts.yml#/~1accounts~1registration"
-  /accounts/registration/{token}: 
+  /accounts/registration/{token}:
     $ref: "./paths/accounts.yml#/~1accounts~1registration~1{token}"
-  /accounts/{account_id}: 
+  /sessions:
+    $ref: "./paths/sessions.yml#/~1sessions"
+  /sessions/access-tokens:
+    $ref: "./paths/sessions.yml#/~1sessions~1access-tokens"
+  /sessions/refresh-tokens:
+    $ref: "./paths/sessions.yml#/~1sessions~1refresh-tokens"
+  /accounts/{account_id}:
     $ref: "./paths/accounts.yml#/~1accounts~1{account_id}"
-  /sessions: 
-    $ref: "./paths/sessions.yml"
-  /scenarios: 
-    $ref: "./paths/scenarios.yml"
-  /expenses: 
-    $ref: "./paths/expenses.yml"
-  /incomes: 
-    $ref: "./paths/incomes.yml"
-  /assets: 
-    $ref: "./paths/assets.yml"
-  /liabilities: 
-    $ref: "./paths/liabilities.yml"
-  /houses: 
-    $ref: "./paths/houses.yml"
-  /children: 
-    $ref: "./paths/children.yml"
-  /risks: 
-    $ref: "./paths/risks.yml"
-  /plots: 
-    $ref: "./paths/plots.yml"
+  /scenarios:
+    $ref: "./paths/scenarios.yml#/~1scenarios"
+  /scenarios/{scenario_id}:
+    $ref: "./paths/scenarios.yml#/~1scenarios~1{scenario_id}"
+  /expenses:
+    $ref: "./paths/expenses.yml#/~1expenses"
+  /expenses/{expense_id}:
+    $ref: "./paths/expenses.yml#/~1expenses~1{expense_id}"
+  /incomes:
+    $ref: "./paths/incomes.yml#/~1incomes"
+  /incomes/{income_id}:
+    $ref: "./paths/incomes.yml#/~1incomes~1{income_id}"
+  /assets:
+    $ref: "./paths/assets.yml#/~1assets"
+  /assets/{asset_id}:
+    $ref: "./paths/assets.yml#/~1assets~1{asset_id}"
+  /liabilities:
+    $ref: "./paths/liabilities.yml#/~1liabilities"
+  /liabilities/{liability_id}:
+    $ref: "./paths/liabilities.yml#/~1liabilities~1{liability_id}"
+  /houses:
+    $ref: "./paths/houses.yml#/~1houses"
+  /houses/{house_id}:
+    $ref: "./paths/houses.yml#/~1houses~1{house_id}"
+  /children:
+    $ref: "./paths/children.yml#/~1children"
+  /children/{child_id}:
+    $ref: "./paths/children.yml#/~1children~1{child_id}"
+  /risks:
+    $ref: "./paths/risks.yml#/~1risks"
+  /risks/{risk_id}:
+    $ref: "./paths/risks.yml#/~1risks~1{risk_id}"
+  /scenarios/{scenario_id}/expenses:
+    $ref: "./paths/scenarios/expenses.yml#/~1scenarios~1{scenario_id}~1expenses"
+  /scenarios/{scenario_id}/incomes:
+    $ref: "./paths/scenarios/incomes.yml#/~1scenarios~1{scenario_id}~1incomes"
+  /scenarios/{scenario_id}/assets:
+    $ref: "./paths/scenarios/assets.yml#/~1scenarios~1{scenario_id}~1assets"
+  /scenarios/{scenario_id}/liabilities:
+    $ref: "./paths/scenarios/liabilities.yml#/~1scenarios~1{scenario_id}~1liabilities"
+  /scenarios/{scenario_id}/houses:
+    $ref: "./paths/scenarios/houses.yml#/~1scenarios~1{scenario_id}~1houses"
+  /scenarios/{scenario_id}/children:
+    $ref: "./paths/scenarios/children.yml#/~1scenarios~1{scenario_id}~1children"
+  /scenarios/{scenario_id}/risks:
+    $ref: "./paths/scenarios/risks.yml#/~1scenarios~1{scenario_id}~1risks"
+  /scenarios/{scenario_id}/expenses/{expense_id}:
+    $ref: "./paths/scenarios/expenses.yml#/~1scenarios~1{scenario_id}~1expenses~1{expense_id}"
+  /scenarios/{scenario_id}/incomes/{income_id}:
+    $ref: "./paths/scenarios/incomes.yml#/~1scenarios~1{scenario_id}~1incomes~1{income_id}"
+  /scenarios/{scenario_id}/assets/{asset_id}:
+    $ref: "./paths/scenarios/assets.yml#/~1scenarios~1{scenario_id}~1assets~1{asset_id}"
+  /scenarios/{scenario_id}/liabilities/{liability_id}:
+    $ref: "./paths/scenarios/liabilities.yml#/~1scenarios~1{scenario_id}~1liabilities~1{liability_id}"
+  /scenarios/{scenario_id}/houses/{house_id}:
+    $ref: "./paths/scenarios/houses.yml#/~1scenarios~1{scenario_id}~1houses~1{house_id}"
+  /scenarios/{scenario_id}/children/{child_id}:
+    $ref: "./paths/scenarios/children.yml#/~1scenarios~1{scenario_id}~1children~1{child_id}"
+  /scenarios/{scenario_id}/risks/{risk_id}:
+    $ref: "./paths/scenarios/risks.yml#/~1scenarios~1{scenario_id}~1risks~1{risk_id}"
+  /plots/expenses/{expense_id}:
+    $ref: "./paths/plots.yml#/~1plots~1expenses~1{expense_id}"
+  /plots/incomes/{income_id}:
+    $ref: "./paths/plots.yml#/~1plots~1incomes~1{income_id}"
+  /plots/assets/{asset_id}:
+    $ref: "./paths/plots.yml#/~1plots~1assets~1{asset_id}"
+  /plots/liabilities/{liability_id}:
+    $ref: "./paths/plots.yml#/~1plots~1liabilities~1{liability_id}"
+  /plots/houses/{house_id}:
+    $ref: "./paths/plots.yml#/~1plots~1houses~1{house_id}"
+  /plots/children/{child_id}:
+    $ref: "./paths/plots.yml#/~1plots~1children~1{child_id}"
+  /plots/risks/{risk_id}:
+    $ref: "./paths/plots.yml#/~1plots~1risks~1{risk_id}"
+  /plots/scenarios/{scenario_id}/expenses/{expense_id}:
+    $ref: "./paths/plots/scenarios/expenses.yml#/~1plots~1scenarios~1{scenario_id}~1expenses~1{expense_id}"
+  /plots/scenarios/{scenario_id}/incomes/{income_id}:
+    $ref: "./paths/plots/scenarios/incomes.yml#/~1plots~1scenarios~1{scenario_id}~1incomes~1{income_id}"
+  /plots/scenarios/{scenario_id}/assets/{asset_id}:
+    $ref: "./paths/plots/scenarios/assets.yml#/~1plots~1scenarios~1{scenario_id}~1assets~1{asset_id}"
+  /plots/scenarios/{scenario_id}/liabilities/{liability_id}:
+    $ref: "./paths/plots/scenarios/liabilities.yml#/~1plots~1scenarios~1{scenario_id}~1liabilities~1{liability_id}"
+  /plots/scenarios/{scenario_id}/houses/{house_id}:
+    $ref: "./paths/plots/scenarios/houses.yml#/~1plots~1scenarios~1{scenario_id}~1houses~1{house_id}"
+  /plots/scenarios/{scenario_id}/children/{child_id}:
+    $ref: "./paths/plots/scenarios/children.yml#/~1plots~1scenarios~1{scenario_id}~1children~1{child_id}"
+  /plots/scenarios/{scenario_id}/risks/{risk_id}:
+    $ref: "./paths/plots/scenarios/risks.yml#/~1plots~1scenarios~1{scenario_id}~1risks~1{risk_id}"
+  /plots/scenarios/{scenario_id}/expenses:
+    $ref: "./paths/plots/scenarios/expenses.yml#/~1plots~1scenarios~1{scenario_id}~1expenses"
+  /plots/scenarios/{scenario_id}/incomes:
+    $ref: "./paths/plots/scenarios/incomes.yml#/~1plots~1scenarios~1{scenario_id}~1incomes"
+  /plots/scenarios/{scenario_id}/assets:
+    $ref: "./paths/plots/scenarios/assets.yml#/~1plots~1scenarios~1{scenario_id}~1assets"
+  /plots/scenarios/{scenario_id}/liabilities:
+    $ref: "./paths/plots/scenarios/liabilities.yml#/~1plots~1scenarios~1{scenario_id}~1liabilities"
+  /plots/scenarios/{scenario_id}/houses:
+    $ref: "./paths/plots/scenarios/houses.yml#/~1plots~1scenarios~1{scenario_id}~1houses"
+  /plots/scenarios/{scenario_id}/children:
+    $ref: "./paths/plots/scenarios/children.yml#/~1plots~1scenarios~1{scenario_id}~1children"
+  /plots/scenarios/{scenario_id}/risks:
+    $ref: "./paths/plots/scenarios/risks.yml#/~1plots~1scenarios~1{scenario_id}~1risks"
+  /plots/scenarios/{scenario_id}/expenses/total:
+    $ref: "./paths/plots/scenarios/expenses.yml#/~1plots~1scenarios~1{scenario_id}~1expenses~1total"
+  /plots/scenarios/{scenario_id}/incomes/total:
+    $ref: "./paths/plots/scenarios/incomes.yml#/~1plots~1scenarios~1{scenario_id}~1incomes~1total"
+  /plots/scenarios/{scenario_id}/assets/total:
+    $ref: "./paths/plots/scenarios/assets.yml#/~1plots~1scenarios~1{scenario_id}~1assets~1total"
+  /plots/scenarios/{scenario_id}/liabilities/total:
+    $ref: "./paths/plots/scenarios/liabilities.yml#/~1plots~1scenarios~1{scenario_id}~1liabilities~1total"
+  /plots/scenarios/{scenario_id}/houses/total:
+    $ref: "./paths/plots/scenarios/houses.yml#/~1plots~1scenarios~1{scenario_id}~1houses~1total"
+  /plots/scenarios/{scenario_id}/children/total:
+    $ref: "./paths/plots/scenarios/children.yml#/~1plots~1scenarios~1{scenario_id}~1children~1total"
+  /plots/scenarios/{scenario_id}/risks/total:
+    $ref: "./paths/plots/scenarios/risks.yml#/~1plots~1scenarios~1{scenario_id}~1risks~1total"
+  /plots/scenarios/{scenario_id}/cashflow:
+    $ref: "./paths/plots/scenarios/aggregates.yml#/~1plots~1scenarios~1{scenario_id}~1cashflow"
+  /plots/scenarios/{scenario_id}/capital:
+    $ref: "./paths/plots/scenarios/aggregates.yml#/~1plots~1scenarios~1{scenario_id}~1capital"
+  /plots/scenarios/{scenario_id}/wealth:
+    $ref: "./paths/plots/scenarios/aggregates.yml#/~1plots~1scenarios~1{scenario_id}~1wealth"
 components:
   schemas:
     Account:
