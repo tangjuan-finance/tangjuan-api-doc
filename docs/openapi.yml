@@ -41,6 +41,20 @@ tags:
     description: "Fee for raising children"
   - name: Risks
     description: "Risk as costing extra money"
+  - name: ScenarioExpenses
+    description: "Money spend in a year in a scenario"
+  - name: ScenarioIncomes
+    description: "Money earned in a year in a scenario"
+  - name: ScenarioAssets
+    description: "Capital which could be sold in a scenario"
+  - name: ScenarioLiabilities
+    description: "Capital which have to pay for in a scenario"
+  - name: ScenarioHouses
+    description: "House loan (mortgage) in a scenario"
+  - name: ScenarioChildren
+    description: "Fee for raising children in a scenario"
+  - name: ScenarioRisks
+    description: "Risk as costing extra money in a scenario"
   - name: Plots
     description: "For plotting resources"
 servers:

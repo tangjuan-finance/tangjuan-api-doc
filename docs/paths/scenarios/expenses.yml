@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Scenarios
+    - ScenarioExpenses
     summary: Get a list of expenses in the specific scenario
     operationId: listExpensesInScenarioWithId
     responses:
@@ -48,7 +48,7 @@
       required: true
   post:
     tags:
-    - Scenarios
+    - ScenarioExpenses
     summary: Add expense to the specific scenario
     operationId: addExpenseToScenarioWithId
     responses:
@@ -83,7 +83,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioExpense'
   get:
     tags:
-    - Scenarios
+    - ScenarioExpenses
     summary: View expense in the specific scenario
     operationId: viewExpenseInScenarioWithId
     responses:
@@ -112,7 +112,7 @@
               $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
-    - Scenarios
+    - ScenarioExpenses
     summary: Update expense in the specific scenario
     operationId: updateExpenseInScenarioWithId
     responses:
@@ -147,7 +147,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioExpense'
   delete:
     tags:
-    - Scenarios
+    - ScenarioExpenses
     summary: Remove expense from the specific scenario
     operationId: removeExpenseFromScenarioWithId
     responses:

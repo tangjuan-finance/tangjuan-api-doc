@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Scenarios
+    - ScenarioHouses
     summary: Get a list of houses in the specific scenario
     operationId: listHousesInScenarioWithId
     responses:
@@ -48,7 +48,7 @@
       required: true
   post:
     tags:
-    - Scenarios
+    - ScenarioHouses
     summary: Add house to the specific scenario
     operationId: addHouseToScenarioWithId
     responses:
@@ -83,7 +83,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioHouse'
   get:
     tags:
-    - Scenarios
+    - ScenarioHouses
     summary: View house in the specific scenario
     operationId: viewHouseInScenarioWithId
     responses:
@@ -112,7 +112,7 @@
               $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
-    - Scenarios
+    - ScenarioHouses
     summary: Update house in the specific scenario
     operationId: updateHouseInScenarioWithId
     responses:
@@ -147,7 +147,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioHouse'
   delete:
     tags:
-    - Scenarios
+    - ScenarioHouses
     summary: Remove house from the specific scenario
     operationId: removeHouseFromScenarioWithId
     responses:

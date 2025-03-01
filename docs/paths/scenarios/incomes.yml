@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Scenarios
+    - ScenarioIncomes
     summary: Get a list of incomes in the specific scenario
     operationId: listIncomesInScenarioWithId
     responses:
@@ -48,7 +48,7 @@
       required: true
   post:
     tags:
-    - Scenarios
+    - ScenarioIncomes
     summary: Add income to the specific scenario
     operationId: addIncomeToScenarioWithId
     responses:
@@ -83,7 +83,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioIncome'
   get:
     tags:
-    - Scenarios
+    - ScenarioIncomes
     summary: View income in the specific scenario
     operationId: viewIncomeInScenarioWithId
     responses:
@@ -112,7 +112,7 @@
               $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
-    - Scenarios
+    - ScenarioIncomes
     summary: Update income in the specific scenario
     operationId: updateIncomeInScenarioWithId
     responses:
@@ -147,7 +147,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioIncome'
   delete:
     tags:
-    - Scenarios
+    - ScenarioIncomes
     summary: Remove income from the specific scenario
     operationId: removeIncomeFromScenarioWithId
     responses:

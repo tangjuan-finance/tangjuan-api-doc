@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Scenarios
+    - ScenarioChildren
     summary: Get a list of children in the specific scenario
     operationId: listChildrenInScenarioWithId
     responses:
@@ -48,7 +48,7 @@
       required: true
   post:
     tags:
-    - Scenarios
+    - ScenarioChildren
     summary: Add child to the specific scenario
     operationId: addChildToScenarioWithId
     responses:
@@ -83,7 +83,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioChild'
   get:
     tags:
-    - Scenarios
+    - ScenarioChildren
     summary: View child in the specific scenario
     operationId: viewChildInScenarioWithId
     responses:
@@ -112,7 +112,7 @@
               $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
-    - Scenarios
+    - ScenarioChildren
     summary: Update child in the specific scenario
     operationId: updateChildInScenarioWithId
     responses:
@@ -147,7 +147,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioChild'
   delete:
     tags:
-    - Scenarios
+    - ScenarioChildren
     summary: Remove child from the specific scenario
     operationId: removeChildFromScenarioWithId
     responses:

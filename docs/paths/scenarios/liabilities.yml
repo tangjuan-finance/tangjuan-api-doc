@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Scenarios
+    - ScenarioLiabilities
     summary: Get a list of liabilities in the specific scenario
     operationId: listLiabilitiesInScenarioWithId
     responses:
@@ -48,7 +48,7 @@
       required: true
   post:
     tags:
-    - Scenarios
+    - ScenarioLiabilities
     summary: Add liability to the specific scenario
     operationId: addLiabilityToScenarioWithId
     responses:
@@ -83,7 +83,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioLiability'
   get:
     tags:
-    - Scenarios
+    - ScenarioLiabilities
     summary: View liability in the specific scenario
     operationId: viewLiabilityInScenarioWithId
     responses:
@@ -112,7 +112,7 @@
               $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
-    - Scenarios
+    - ScenarioLiabilities
     summary: Update liability in the specific scenario
     operationId: updateLiabilityInScenarioWithId
     responses:
@@ -147,7 +147,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioLiability'
   delete:
     tags:
-    - Scenarios
+    - ScenarioLiabilities
     summary: Remove liability from the specific scenario
     operationId: removeLiabilityFromScenarioWithId
     responses:

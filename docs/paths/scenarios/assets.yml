@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Scenarios
+    - ScenarioAssets
     summary: Get a list of assets in the specific scenario
     operationId: listAssetsInScenarioWithId
     responses:
@@ -48,7 +48,7 @@
       required: true
   post:
     tags:
-    - Scenarios
+    - ScenarioAssets
     summary: Add asset to the specific scenario
     operationId: addAssetToScenarioWithId
     responses:
@@ -83,7 +83,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioAsset'
   get:
     tags:
-    - Scenarios
+    - ScenarioAssets
     summary: View asset in the specific scenario
     operationId: viewAssetInScenarioWithId
     responses:
@@ -112,7 +112,7 @@
               $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
-    - Scenarios
+    - ScenarioAssets
     summary: Update asset in the specific scenario
     operationId: updateAssetInScenarioWithId
     responses:
@@ -147,7 +147,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioAsset'
   delete:
     tags:
-    - Scenarios
+    - ScenarioAssets
     summary: Remove asset from the specific scenario
     operationId: removeAssetFromScenarioWithId
     responses:

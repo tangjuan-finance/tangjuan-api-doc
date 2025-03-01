@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Scenarios
+    - ScenarioRisks
     summary: Get a list of risks belonging to the specific scenario
     operationId: listRisksForScenario
     responses:
@@ -48,7 +48,7 @@
       required: true
   post:
     tags:
-    - Scenarios
+    - ScenarioRisks
     summary: Add risk to the specific scenario
     operationId: addRiskToScenarioWithId
     responses:
@@ -83,7 +83,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioRisk'
   get:
     tags:
-    - Scenarios
+    - ScenarioRisks
     summary: View risk in the specific scenario
     operationId: viewRiskInScenarioWithId
     responses:
@@ -112,7 +112,7 @@
               $ref: '../../openapi.yml#/components/schemas/Problem'
   put:
     tags:
-    - Scenarios
+    - ScenarioRisks
     summary: Update risk in the specific scenario
     operationId: updateRiskInScenarioWithId
     responses:
@@ -147,7 +147,7 @@
             $ref: '../../openapi.yml#/components/schemas/ScenarioRisk'
   delete:
     tags:
-    - Scenarios
+    - ScenarioRisks
     summary: Remove risk from the specific scenario
     operationId: removeRiskFromScenarioWithId
     responses:
