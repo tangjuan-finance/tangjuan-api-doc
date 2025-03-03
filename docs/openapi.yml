@@ -2,15 +2,7 @@ openapi: 3.0.3
 info:
   title: Tang Juan API
   version: 0.1.0
-  description: |-
-
-    This is the API documentation for the Tang Juan API.
-    ---
-
-    # Auth
-    To get a **SecurityToken**:
-    1. Create a **Account** with `POST /accounts/registration``
-    2. Get a **SecurityToken** by calling `POST /sessions`` with your **Account** credentials.
+  description: Tang Juan API Doc
 
   contact:
     name: Tang Juan API Support Team
