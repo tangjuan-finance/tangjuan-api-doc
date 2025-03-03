@@ -3,6 +3,10 @@ info:
   title: Tang Juan API
   version: 0.1.0
   description: Tang Juan API Doc
+  x-logo:
+    url: "assets/banner.png"
+    backgroundColor: "#FDE047"
+    altText: "Tang Juan API Doc logo"
 
   contact:
     name: Tang Juan API Support Team
@@ -263,4 +267,3 @@ components:
       $ref: "security.yml#/accessToken"
     refreshToken:
       $ref: "security.yml#/refreshToken"
-# Source: https://github.com/designapis/openapi/blob/main/ch20/openapi.yml
