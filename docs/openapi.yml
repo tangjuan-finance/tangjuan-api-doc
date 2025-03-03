@@ -2,7 +2,6 @@ openapi: 3.0.3
 info:
   title: Tang Juan API
   version: 0.1.0
-  description: Tang Juan API Doc
   x-logo:
     url: "assets/banner.png"
     backgroundColor: "#FDE047"
