@@ -12,7 +12,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioIncomes
     summary: Get the plot of income in the specific scenario
     operationId: plotIncomeWithIdInScenarioWithId
     responses:
@@ -43,7 +43,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioIncomes
     summary: Get a list of the income plots in the specific scenario
     operationId: listIncomePlotsInScenarioWithId
     responses:
@@ -79,7 +79,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioIncomes
     summary: Get the plot of the total income in the specific scenario
     operationId: plotTotalIncomeInScenarioWithId
     responses:

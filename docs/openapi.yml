@@ -57,6 +57,22 @@ tags:
     description: "Risk as costing extra money in a scenario"
   - name: Plots
     description: "For plotting resources"
+  - name: PlotScenarioExpenses
+    description: "Plot the money spend in a year in a scenario"
+  - name: PlotScenarioIncomes
+    description: "Plot the money earned in a year in a scenario"
+  - name: PlotScenarioAssets
+    description: "Plot the capital which could be sold in a scenario"
+  - name: PlotScenarioLiabilities
+    description: "Plot the capital which have to pay for in a scenario"
+  - name: PlotScenarioHouses
+    description: "Plot the house loan (mortgage) in a scenario"
+  - name: PlotScenarioChildren
+    description: "Plot the fee for raising children in a scenario"
+  - name: PlotScenarioRisks
+    description: "Plot the risk as costing extra money in a scenario"
+  - name: PlotsScenarioAggregates
+    description: "Plot the aggregates of resources in a scenario"
 servers:
   - url: https://njfps-backend-api.onrender.com
 paths:

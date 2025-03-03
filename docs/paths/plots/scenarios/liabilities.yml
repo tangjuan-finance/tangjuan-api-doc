@@ -12,7 +12,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioLiabilities
     summary: Get the plot of liability in the specific scenario
     operationId: plotLiabilityWithIdInScenarioWithId
     responses:
@@ -43,7 +43,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioLiabilities
     summary: Get a list of the liability plots in the specific scenario
     operationId: listLiabilityPlotsInScenarioWithId
     responses:
@@ -79,7 +79,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioLiabilities
     summary: Get the plot of the total liability in the specific scenario
     operationId: plotTotalLiabilityInScenarioWithId
     responses:

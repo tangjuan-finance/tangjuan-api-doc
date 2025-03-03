@@ -12,7 +12,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioAssets
     summary: Get the plot of asset in the specific scenario
     operationId: plotAssetWithIdInScenarioWithId
     responses:
@@ -43,7 +43,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioAssets
     summary: Get a list of the asset plots in the specific scenario
     operationId: listAssetPlotsInScenarioWithId
     responses:
@@ -79,7 +79,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioAssets
     summary: Get the plot of the total asset in the specific scenario
     operationId: plotTotalAssetInScenarioWithId
     responses:

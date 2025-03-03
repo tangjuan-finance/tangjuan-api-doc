@@ -7,7 +7,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioAggregates
     summary: Get the plot of the cashflow in the specific scenario
     operationId: plotCashflowInScenarioWithId
     responses:
@@ -38,7 +38,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioAggregates
     summary: Get the plot of the capital in the specific scenario
     operationId: plotCapitalInScenarioWithId
     responses:
@@ -69,7 +69,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioAggregates
     summary: Get the plot of the wealth in the specific scenario
     operationId: plotWealthInScenarioWithId
     responses:

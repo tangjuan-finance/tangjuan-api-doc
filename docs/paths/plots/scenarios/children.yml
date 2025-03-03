@@ -12,7 +12,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioChildren
     summary: Get the plot of child in the specific scenario
     operationId: plotChildWithIdInScenarioWithId
     responses:
@@ -43,7 +43,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioChildren
     summary: Get a list of the child plots in the specific scenario
     operationId: listChildPlotsInScenarioWithId
     responses:
@@ -79,7 +79,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioChildren
     summary: Get the plot of the total child in the specific scenario
     operationId: plotTotalChildInScenarioWithId
     responses:

@@ -12,7 +12,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioExpenses
     summary: Get the plot of expense in the specific scenario
     operationId: plotExpenseWithIdInScenarioWithId
     responses:
@@ -43,7 +43,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioExpenses
     summary: Get a list of the expense plots in the specific scenario
     operationId: listExpensePlotsInScenarioWithId
     responses:
@@ -79,7 +79,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioExpenses
     summary: Get the plot of the total expense in the specific scenario
     operationId: plotTotalExpenseInScenarioWithId
     responses:

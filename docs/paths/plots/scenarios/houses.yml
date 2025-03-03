@@ -12,7 +12,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioHouses
     summary: Get the plot of house in the specific scenario
     operationId: plotHouseWithIdInScenarioWithId
     responses:
@@ -43,7 +43,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioHouses
     summary: Get a list of the house plots in the specific scenario
     operationId: listHousePlotsInScenarioWithId
     responses:
@@ -79,7 +79,7 @@
       required: true
   get:
     tags:
-    - Plots
+    - PlotsScenarioHouses
     summary: Get the plot of the total house in the specific scenario
     operationId: plotTotalHouseInScenarioWithId
     responses:
