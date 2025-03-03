@@ -12,7 +12,7 @@
       required: true
   get:
     tags:
-    - PlotsScenarioRisks
+    - PlotScenarioRisks
     summary: Get the plot of risk in the specific scenario
     operationId: plotRiskWithIdInScenarioWithId
     responses:
@@ -43,7 +43,7 @@
       required: true
   get:
     tags:
-    - PlotsScenarioRisks
+    - PlotScenarioRisks
     summary: Get a list of the risk plots in the specific scenario
     operationId: listRiskPlotsInScenarioWithId
     responses:
@@ -79,7 +79,7 @@
       required: true
   get:
     tags:
-    - PlotsScenarioRisks
+    - PlotScenarioRisks
     summary: Get the plot of the total risk in the specific scenario
     operationId: plotTotalRiskInScenarioWithId
     responses:
