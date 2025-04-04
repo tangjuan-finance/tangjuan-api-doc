@@ -43,6 +43,7 @@ Expense:
     - max_yearly_growth_rate
     - min_yearly_growth_rate
     - start_age
+    - end_age
   properties:
     id:
       type: string
@@ -90,7 +91,6 @@ Expense:
       type: integer
       format: int32
       description: "The ending age when this expense applies, null if indefinite"
-      nullable: true
       example: 65
     created_at:
       type: string
@@ -106,6 +106,7 @@ Income:
     - max_yearly_growth_rate
     - min_yearly_growth_rate
     - start_age
+    - end_age
   properties:
     id:
       type: string
@@ -153,7 +154,6 @@ Income:
       type: integer
       format: int32
       description: "The ending age when this income applies, null if indefinite"
-      nullable: true
       example: 65
     created_at:
       type: string
@@ -169,6 +169,7 @@ Asset:
     - max_yearly_return_rate
     - min_yearly_return_rate
     - start_age
+    - end_age
   properties:
     id:
       type: string
@@ -216,7 +217,6 @@ Asset:
       type: integer
       format: int32
       description: "The ending age when this asset applies, null if indefinite"
-      nullable: true
       example: 65
     created_at:
       type: string
@@ -233,6 +233,7 @@ House:
     - interest_rate
     - loan_term
     - purchase_age
+    - sale_age
   properties:
     id:
       type: string
@@ -284,7 +285,6 @@ House:
     sale_age:
       type: integer
       format: int32
-      nullable: true
       description: "Age of the owner at the time of house sale (null if not sold)"
       example: 65
     created_at:
@@ -298,6 +298,7 @@ Child:
     - name
     - parent_id
     - birth_age
+    - independent_age    
   properties:
     id:
       type: string
@@ -329,7 +330,6 @@ Child:
     independent_age:
       type: integer
       format: int32
-      nullable: true
       description: "The estimated age when the child becomes financially independent"
     created_at:
       type: string
@@ -401,6 +401,7 @@ Risk:
     - max_loss
     - min_loss
     - start_age
+    - end_age
   properties:
     id:
       type: string
@@ -440,7 +441,6 @@ Risk:
     end_age:
       type: integer
       format: int32
-      nullable: true
       description: "The ending age when this risk applies, null if indefinite"
       example: 65
     created_at:
