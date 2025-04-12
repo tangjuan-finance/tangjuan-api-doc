@@ -431,6 +431,7 @@ Risk:
       minimum: 0
       maximum: 1
       description: "The annual probability that this risk occurs in this scenario, expressed as a decimal between 0 and 1."
+      example: 0.8
     description:
       type: string
       description: "Detailed description of the risk"
