@@ -299,14 +299,12 @@ ScenarioRisk:
       maxLength: 13
       description: "Primary key of the risk"
       example: "nLpl6cZKxgnzR"
-    max_loss:
+    probability:
       type: number
-      format: int64
-      description: "Maximum possible loss due to the risk in this scenario"
-    min_loss:
-      type: number
-      format: int64
-      description: "Minimum possible loss due to the risk in this scenario"
+      format: float
+      minimum: 0
+      maximum: 1
+      description: "The annual probability that this risk occurs in this scenario, expressed as a decimal between 0 and 1."
     start_age:
       type: integer
       format: int32

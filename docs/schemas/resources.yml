@@ -398,8 +398,8 @@ Risk:
   required:
     - name
     - owner_id
-    - max_loss
-    - min_loss
+    - amount
+    - probability
     - start_age
     - end_age
   properties:
@@ -420,14 +420,17 @@ Risk:
       maxLength: 13
       description: "Foreign key referencing the owner"
       example: "nLpl6cZKxgnzR"
-    max_loss:
-      type: number
+    amount:
+      type: integer
       format: int64
-      description: "Maximum possible loss due to the risk"
-    min_loss:
+      description: "The loss amount incurred if the risk occurs, in New Taiwan Dollars (NTD)."
+      example: 300000
+    probability:
       type: number
-      format: int64
-      description: "Minimum possible loss due to the risk"
+      format: float
+      minimum: 0
+      maximum: 1
+      description: "The annual probability that this risk occurs in this scenario, expressed as a decimal between 0 and 1."
     description:
       type: string
       description: "Detailed description of the risk"
